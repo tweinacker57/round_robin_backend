@@ -19,4 +19,13 @@ class Api::UsersController < ApplicationController
     @user.save
     render 'show.json.jb'
   end
+
+  def update
+    @user = User.find_by(id: params[:id])
+    @user.name = params[:name]
+    @user.email = params[:email]
+    @user.password = params[:password]
+    @user.save
+    render 'show.json.jb'
+  end
 end
