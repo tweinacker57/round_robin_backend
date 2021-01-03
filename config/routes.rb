@@ -15,5 +15,8 @@ Rails.application.routes.draw do
     delete "/users/:id" => "users#destroy"
 
     post "/sessions" => "sessions#create"
+
+    get "/books" => "books#index"
+    get "/books/:id" => "books#show"
   end
 end
