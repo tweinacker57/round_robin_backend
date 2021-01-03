@@ -28,4 +28,10 @@ class Api::UsersController < ApplicationController
     @user.save
     render 'show.json.jb'
   end
+
+  def destroy
+    @user = User.find_by(id: params[:id])
+    @user.destroy
+    render json: {message: "User has been removed"}
+  end 
 end
