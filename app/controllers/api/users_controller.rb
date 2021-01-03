@@ -1,4 +1,5 @@
 class Api::UsersController < ApplicationController
+  
   def index
     @user = User.all
     if current_user

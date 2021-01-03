@@ -1,4 +1,5 @@
 class Api::BooksController < ApplicationController
+  
   def index
     @book = Book.all
     if current_user

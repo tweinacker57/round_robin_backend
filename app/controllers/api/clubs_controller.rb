@@ -1,4 +1,5 @@
 class Api::ClubsController < ApplicationController
+
   
   def show
     id = params[:id]
