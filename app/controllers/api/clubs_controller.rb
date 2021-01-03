@@ -1,8 +1,13 @@
 class Api::ClubsController < ApplicationController
   
-
   def show
-    render 'show.json.jb'
+    id = params[:id]
+    @book_club = BookClub.find_by(id: id)
+    if current_user
+      render "show.json.jb"
+    else
+      render json: []
+    end
   end
 
   def create 

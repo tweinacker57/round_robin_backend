@@ -1,5 +1,5 @@
 {
-  id: @club.id,
-  name: @club.name,
-  book_id: @club.book_id
+  id: @book_club.id,
+  name: @book_club.name,
+  book_id: @book_club.book_id
 }
