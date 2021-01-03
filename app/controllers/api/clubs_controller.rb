@@ -2,7 +2,6 @@ class Api::ClubsController < ApplicationController
   
 
   def show
-
     render 'show.json.jb'
   end
 

@@ -1,0 +1,5 @@
+{
+  id: @club.id,
+  name: @club.name,
+  book_id: @club.book_id
+}
