@@ -18,5 +18,8 @@ Rails.application.routes.draw do
 
     get "/books" => "books#index"
     get "/books/:id" => "books#show"
+
+    get "/clubs/:id" => "book_clubs#show"
+    post "/clubs" => "book_clubs#show"
   end
 end

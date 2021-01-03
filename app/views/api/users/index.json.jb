@@ -1,8 +1,9 @@
-@users.map do |user|
-{
-  id: user.id,
-  name: user.name,
-  email: user.email,
-  password: user.password 
-}
+@user.map do |user|
+  {
+    id: user.id,
+    name: user.name,
+    email: user.email,
+    password: user.password,
+    current_user: current_user
+  }
 end

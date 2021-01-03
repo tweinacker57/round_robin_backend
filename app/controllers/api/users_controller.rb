@@ -1,5 +1,6 @@
 class Api::UsersController < ApplicationController
   def index
+    @user = User.all
     if current_user
       render "index.json.jb"
     else
@@ -10,7 +11,11 @@ class Api::UsersController < ApplicationController
   def show
     id = params[:id]
     @user = User.find_by(id: id)
-    render 'show.json.jb'
+    if current_user
+      render "show.json.jb"
+    else
+      render json: []
+    end
   end
 
   def create 

@@ -1,3 +1,8 @@
-{
-  message: "hello"
-}
+@book.map do |book|
+  {
+  name: book.name,
+  author: book.author,
+  page_count: book.page_count,
+  current_user: current_user.id
+  }
+end
