@@ -1,0 +1,8 @@
+@book_user.map do |book|
+  {
+    user_id: current_user.id,
+    book_id: book.book_id,
+    status: book.status,
+    rating: book.rating
+  }
+end

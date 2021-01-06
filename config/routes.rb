@@ -19,6 +19,9 @@ Rails.application.routes.draw do
     get "/books" => "books#index"
     get "/books/:id" => "books#show"
 
+    post "/book_users" => "book_users#create"
+    get "/book_users" => "book_users#index"
+
     get "/clubs/:id" => "clubs#show"
     post "/clubs" => "clubs#create"
   end
