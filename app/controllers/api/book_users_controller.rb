@@ -13,22 +13,24 @@ class Api::BookUsersController < ApplicationController
     if current_user
       @book_user = BookUser.new(
         user_id: current_user.id,
-        book_id: book.id,
+        book_id: params[:book_id],
         status: params[:status],
         rating: params[:rating]
       )
       @book_user.save
-      render "index.json.jb"
+      render "show.json.jb"
     else
       render json: "Book not saved"
     end
   end
 
   def update
-    @book_user = BookUser.find_by(id: params[:id])
-    @book_user.status = params[:satus],
-    @book_user.rating = params[:rating]
-    @book_user.save
-    render 'index.json.jb'
+    if current_user
+      @book_user = BookUser.find_by(id: params[:id])
+      @book_user.status = params[:satus],
+      @book_user.rating = params[:rating]
+      @book_user.save
+      render 'index.json.jb'
+    end
   end
 end

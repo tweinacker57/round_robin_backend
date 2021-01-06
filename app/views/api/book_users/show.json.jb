@@ -1,0 +1,6 @@
+{
+  book_id: @book_user.id,
+  status: @book_user.status,
+  rating: @book_user.rating,
+  current_user: current_user
+}
