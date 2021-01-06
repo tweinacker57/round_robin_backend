@@ -27,10 +27,10 @@ class Api::BookUsersController < ApplicationController
   def update
     if current_user
       @book_user = BookUser.find_by(id: params[:id])
-      @book_user.status = params[:satus],
+      @book_user.status = params[:status]
       @book_user.rating = params[:rating]
       @book_user.save
-      render 'index.json.jb'
+      render 'show.json.jb'
     end
   end
 end
