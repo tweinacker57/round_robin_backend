@@ -23,4 +23,12 @@ class Api::BookUsersController < ApplicationController
       render json: "Book not saved"
     end
   end
+
+  def update
+    @book_user = BookUser.find_by(id: params[:id])
+    @book_user.status = params[:satus],
+    @book_user.rating = params[:rating]
+    @book_user.save
+    render 'index.json.jb'
+  end
 end

@@ -21,6 +21,7 @@ Rails.application.routes.draw do
 
     post "/book_users" => "book_users#create"
     get "/book_users" => "book_users#index"
+    patch "/book_users/:id" => "book_users#update"
 
     get "/clubs/:id" => "clubs#show"
     post "/clubs" => "clubs#create"
