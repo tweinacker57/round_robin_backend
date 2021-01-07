@@ -14,8 +14,7 @@ class Api::BookUsersController < ApplicationController
       @book_user = BookUser.new(
         user_id: current_user.id,
         book_id: params[:book_id],
-        status: params[:status],
-        rating: params[:rating]
+        status: params[:status]
       )
       @book_user.save
       render "show.json.jb"
