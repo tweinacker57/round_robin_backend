@@ -2,11 +2,7 @@ class Api::BooksController < ApplicationController
   
   def index
     @book = Book.all
-    if current_user
-      render "index.json.jb"
-    else
-      render json: []
-    end
+    render 'index.json.jb'
   end
 
   def show

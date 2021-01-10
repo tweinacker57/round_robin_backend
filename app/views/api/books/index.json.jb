@@ -1,8 +1,8 @@
 @book.map do |book|
   {
+  id: book.id,
   name: book.name,
   author: book.author,
-  page_count: book.page_count,
-  current_user: current_user.id
+  page_count: book.page_count
   }
 end

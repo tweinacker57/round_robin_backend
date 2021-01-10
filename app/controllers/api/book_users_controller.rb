@@ -1,7 +1,7 @@
 class Api::BookUsersController < ApplicationController
 
   def index
-    @book_user = BookUser.all
+    @book_user = current_user.book_users
     if current_user
       render "index.json.jb"
     else
@@ -14,9 +14,10 @@ class Api::BookUsersController < ApplicationController
       @book_user = BookUser.new(
         user_id: current_user.id,
         book_id: params[:book_id],
-        status: params[:status]
+        status: params[:status],
+        rating: params[:rating]
       )
-      @book_user.save
+      @book_user.save!
       render "show.json.jb"
     else
       render json: "Book not saved"
