@@ -24,6 +24,7 @@ Rails.application.routes.draw do
     get "/book_users" => "book_users#index"
     patch "/book_users/:id" => "book_users#update"
     get "/book_users/:id" => "book_users#show"
+    delete "/book_users/:id" => "book_users#destroy"
 
     get "/clubs/:id" => "clubs#show"
     post "/clubs" => "clubs#create"

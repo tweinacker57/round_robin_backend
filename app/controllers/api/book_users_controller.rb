@@ -33,4 +33,12 @@ class Api::BookUsersController < ApplicationController
       render 'show.json.jb'
     end
   end
+
+  def destroy
+    if current_user
+      @book_user = BookUser.find_by(id: params[:id])
+      @book_user.destroy
+      render json: {message: "Book has been removed from your profile"}
+    end
+  end 
 end
