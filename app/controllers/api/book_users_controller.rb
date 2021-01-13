@@ -29,7 +29,7 @@ class Api::BookUsersController < ApplicationController
       @book_user = BookUser.find_by(id: params[:id])
       @book_user.status = params[:status]
       @book_user.rating = params[:rating]
-      @book_user.save
+      @book_user.save!
       render 'show.json.jb'
     end
   end

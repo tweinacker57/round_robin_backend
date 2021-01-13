@@ -3,6 +3,7 @@
   id: book.id,
   name: book.name,
   author: book.author,
-  page_count: book.page_count
+  page_count: book.page_count,
+  current_user: current_user
   }
 end
